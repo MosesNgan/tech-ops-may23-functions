@@ -12,11 +12,13 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building Lambda function code...
-      - npm run build
+      - cd fetch_all
+      - npm install
+      - zip -r ../fetch-all-lambda-function.zip *
   post_build:
     commands:
       - echo Uploading Lambda function code to S3...
-      - aws s3 cp dist/lambda-functions.zip s3://my-lambda-bucket/
+      - aws s3 cp dist/fetch-all-lambda-function.zip s3://tech-ops-may23-bucket/
 artifacts:
   files:
     - '**/*'
