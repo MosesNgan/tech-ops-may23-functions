@@ -15,10 +15,12 @@ phases:
       - cd fetch_all
       - npm install
       - zip -r ../fetch-all-lambda-function.zip *
+      - cd ..
+      - zip -g fetch-all-lambda-function.zip appspec.yml
   post_build:
     commands:
       - echo Uploading Lambda function code to S3...
-      - aws s3 cp ../fetch-all-lambda-function.zip s3://tech-ops-may23-bucket/
+      - aws s3 cp fetch-all-lambda-function.zip s3://tech-ops-may23-bucket/
 artifacts:
   files:
     - '**/*'
