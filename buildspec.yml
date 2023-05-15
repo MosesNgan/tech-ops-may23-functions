@@ -18,7 +18,7 @@ phases:
   post_build:
     commands:
       - echo Uploading Lambda function code to S3...
-      - aws s3 cp dist/fetch-all-lambda-function.zip s3://tech-ops-may23-bucket/
+      - aws s3 cp ../fetch-all-lambda-function.zip s3://tech-ops-may23-bucket/
 artifacts:
   files:
     - '**/*'
