@@ -4,3 +4,6 @@ Resources:
       Type: AWS::Lambda::Function
       Properties:
         Name: "tech-ops-may23-fetch-all"
+        alias: "fetch-all"
+        currentversion: 1
+        targetversion: 2
