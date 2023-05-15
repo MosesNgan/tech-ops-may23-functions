@@ -12,7 +12,7 @@ exports.handler = async (event) => {
   console.log('Connected to database');
 
   try {
-    const result = await client.query('SELECT * FROM "myTable" LIMIT 2');
+    const result = await client.query('SELECT * FROM "myTable" LIMIT 1');
     const data = result.rows;
     console.log('Fetched data:', data);
 
