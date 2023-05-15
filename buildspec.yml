@@ -1,0 +1,22 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14
+  pre_build:
+    commands:
+      - echo Installing source NPM dependencies...
+      - npm install
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Building Lambda function code...
+      - npm run build
+  post_build:
+    commands:
+      - echo Uploading Lambda function code to S3...
+      - aws s3 cp dist/lambda-functions.zip s3://my-lambda-bucket/
+artifacts:
+  files:
+    - '**/*'
