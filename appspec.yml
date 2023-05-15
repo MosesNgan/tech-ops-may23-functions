@@ -3,4 +3,4 @@ Resources:
   - TargetService:
       Type: AWS::Lambda::Function
       Properties:
-        Name: tech-ops-may23-fetch-all
+        Name: "tech-ops-may23-fetch-all"
